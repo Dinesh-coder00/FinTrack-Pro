@@ -1,6 +1,6 @@
 // src/pages/Analytics.jsx
 import React, { useEffect, useState } from 'react';
-import { analyticsAPI, incomeAPI, expenseAPI } from '../services/api';
+import { analyticsAPI} from '../services/api';
 import { useAuth } from '../context/AuthContext';
 import { fmt, CATEGORY_COLOURS } from '../utils/format';
 import {
