@@ -4,7 +4,7 @@
 import axios from 'axios';
 
 const API = axios.create({
- baseURL: 'http://localhost:8081/api',        // proxied to Spring Boot :8080/api
+ baseURL: 'http://localhost:8080/api',        // proxied to Spring Boot :8080/api
   timeout: 15_000,
   headers: { 'Content-Type': 'application/json' },
 });
