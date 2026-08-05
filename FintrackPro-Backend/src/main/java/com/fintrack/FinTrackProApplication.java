@@ -15,4 +15,5 @@ public class FinTrackProApplication {
     public static void main(String[] args) {
         SpringApplication.run(FinTrackProApplication.class, args);
     }
+
 }
