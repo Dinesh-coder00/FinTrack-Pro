@@ -4,7 +4,7 @@
 import axios from 'axios';
 
 const API = axios.create({
- baseURL: 'https://fintrack-pro-1-7v28.onrender.com/api',        // proxied to Spring Boot :8080/api
+ baseURL: "https://fintrack-pro-1-7v28.onrender.com/api",        // proxied to Spring Boot :8080/api
   timeout: 15_000,
   headers: { 'Content-Type': 'application/json' },
 });
