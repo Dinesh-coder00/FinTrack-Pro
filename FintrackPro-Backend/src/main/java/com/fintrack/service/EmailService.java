@@ -70,7 +70,7 @@ public class EmailService {
                 "Please review your expenses immediately.\n\n" +
                 "Thank you.");
 
-        msend(message);
+        send(message);
     }
     public void sendGoalCompletedEmail(
             String to,
