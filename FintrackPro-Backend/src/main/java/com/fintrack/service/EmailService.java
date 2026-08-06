@@ -92,7 +92,9 @@ public class EmailService {
                 "Thank you."
         );
 
-        send(message);
+                send(message);
+    }
+
     public void sendOtpEmail(String to, String otp) {
 
         SimpleMailMessage message = new SimpleMailMessage();
@@ -108,11 +110,12 @@ public class EmailService {
 
         send(message);
     }
+
     private void send(SimpleMailMessage message) {
-    try {
-        mailSender.send(message);
-    } catch (Exception e) {
-        System.out.println("Email sending failed: " + e.getMessage());
+        try {
+            mailSender.send(message);
+        } catch (Exception e) {
+            System.out.println("Email sending failed: " + e.getMessage());
+        }
     }
-}
 }
