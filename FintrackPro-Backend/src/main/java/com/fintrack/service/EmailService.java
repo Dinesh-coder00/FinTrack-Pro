@@ -23,7 +23,11 @@ public class EmailService {
                 "Thank you."
         );
 
-        mailSender.send(message);
+        try {
+    send(message);
+} catch (Exception e) {
+    e.printStackTrace();
+}
     }
     public void sendLoginAlertEmail(String to, String name) {
 
@@ -37,7 +41,7 @@ public class EmailService {
                 "If this was not you, please change your password immediately.\n\n" +
                 "Thank you.");
 
-        mailSender.send(message);
+       send(message);
     }
     public void sendBudgetWarningEmail(String to, String name, double usedPercent) {
 
@@ -51,7 +55,7 @@ public class EmailService {
                 "Please control your expenses to stay within your budget.\n\n" +
                 "Thank you.");
 
-        mailSender.send(message);
+        send(message);
     }
     public void sendBudgetExceededEmail(String to, String name, double pct) {
 
@@ -66,7 +70,7 @@ public class EmailService {
                 "Please review your expenses immediately.\n\n" +
                 "Thank you.");
 
-        mailSender.send(message);
+        msend(message);
     }
     public void sendGoalCompletedEmail(
             String to,
@@ -88,8 +92,7 @@ public class EmailService {
                 "Thank you."
         );
 
-        mailSender.send(message);
-    }
+        send(message);
     public void sendOtpEmail(String to, String otp) {
 
         SimpleMailMessage message = new SimpleMailMessage();
@@ -103,6 +106,13 @@ public class EmailService {
                 "If you did not request this, please ignore this email.\n\n" +
                 "Thank you.");
 
-        mailSender.send(message);
+        send(message);
     }
+    private void send(SimpleMailMessage message) {
+    try {
+        mailSender.send(message);
+    } catch (Exception e) {
+        System.out.println("Email sending failed: " + e.getMessage());
+    }
+}
 }
