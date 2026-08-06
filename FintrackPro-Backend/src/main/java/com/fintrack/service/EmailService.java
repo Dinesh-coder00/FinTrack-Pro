@@ -24,7 +24,7 @@ public class EmailService {
         );
 
         try {
-    send(message);
+      mailSender.send(message);
 } catch (Exception e) {
     e.printStackTrace();
 }
